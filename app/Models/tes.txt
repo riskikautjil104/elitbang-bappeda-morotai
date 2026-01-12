@@ -1,0 +1,104 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+
+class LaporanAkhir extends Model
+{
+    protected $table = 'laporan_akhirs';
+    
+    protected $fillable = [
+        'user_id',
+        'jenis_kegiatan',
+        'judul_kegiatan',
+        'penanggung_jawab',
+        'tahun_pelaksanaan',
+        'lokasi_kegiatan',
+        'tanggal_mulai',
+        'tanggal_selesai',
+        'anggaran',
+        'latar_belakang',
+        'tujuan_kegiatan',
+        'metode_pelaksanaan',
+        'tahapan_pelaksanaan',
+        'output_kegiatan',
+        'hasil_kegiatan',
+        'persentase_realisasi',
+        'kendala_pelaksanaan',
+        'solusi_kendala',
+        'file_laporan',
+        'file_dokumentasi',
+        'file_data_pendukung',
+        'file_sk',
+        'file_pemaparan',
+        'status',
+        'catatan_admin',
+        'tanggal_verifikasi',
+        'verified_by',
+    ];
+
+    protected $casts = [
+        'tanggal_mulai' => 'date',
+        'tanggal_selesai' => 'date',
+        'tanggal_verifikasi' => 'datetime',
+        'anggaran' => 'decimal:0',
+        'persentase_realisasi' => 'decimal:2',
+    ];
+
+    // TAMBAHKAN ACCESSOR INI
+    protected $appends = ['file_dokumentasi_array', 'file_data_pendukung_array'];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    public function verifiedBy()
+    {
+        return $this->belongsTo(User::class, 'verified_by');
+    }
+
+    // Accessor untuk decode file dokumentasi
+    public function getFileDokumentasiArrayAttribute()
+    {
+        if (empty($this->file_dokumentasi)) {
+            return [];
+        }
+        
+        $files = json_decode($this->file_dokumentasi, true);
+        return is_array($files) ? $files : [];
+    }
+
+    // Accessor untuk decode file data pendukung
+    public function getFileDataPendukungArrayAttribute()
+    {
+        if (empty($this->file_data_pendukung)) {
+            return [];
+        }
+        
+        $files = json_decode($this->file_data_pendukung, true);
+        return is_array($files) ? $files : [];
+    }
+
+    // Scope untuk filter berdasarkan status
+    public function scopeMenungguVerifikasi($query)
+    {
+        return $query->where('status', 'menunggu verifikasi');
+    }
+
+    public function scopeDiterima($query)
+    {
+        return $query->where('status', 'diterima');
+    }
+
+    public function scopeRevisi($query)
+    {
+        return $query->where('status', 'revisi');
+    }
+
+    public function scopeDitolak($query)
+    {
+        return $query->where('status', 'ditolak');
+    }
+}
