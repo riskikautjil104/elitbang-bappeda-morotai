@@ -23,24 +23,24 @@
                             <i class="lni-wallet" style="margin-right: 15px;"></i>Laporan Realisasi Anggaran
                         </h1>
                         <p style="font-size: 1.2rem; color: rgba(255,255,255,0.9); margin-bottom: 25px; max-width: 600px;">
-                            Transparansi pengelolaan anggaran untuk kegiatan penelitian dan pengembangan di Lingkungan
-                            Pemerintah Kota
+                            Transparansi pengelolaan anggaran untuk kegiatan penelitian pengembangan dan inovasi di Lingkungan
+                            Pemerintah Kabupaten Pulau Morotai
                         </p>
                         <div class="hero-stats" style="display: flex; gap: 30px; margin-bottom: 25px;">
                             <div style="text-align: center;">
-                                <div style="font-size: 2.5rem; font-weight: 700; color: #fff;">
+                                <div style="font-size: 1.5rem; font-weight: 700; color: #fff;">
                                     Rp {{ number_format($totalAnggaran, 0, ',', '.') }}
                                 </div>
                                 <div style="color: rgba(255,255,255,0.8); font-size: 0.9rem;">Total Anggaran</div>
                             </div>
                             <div style="text-align: center;">
-                                <div style="font-size: 2.5rem; font-weight: 700; color: #fff;">
+                                <div style="font-size: 1.5rem; font-weight: 700; color: #fff;">
                                     Rp {{ number_format($totalRealisasi, 0, ',', '.') }}
                                 </div>
                                 <div style="color: rgba(255,255,255,0.8); font-size: 0.9rem;">Total Realisasi</div>
                             </div>
                             <div style="text-align: center;">
-                                <div style="font-size: 2.5rem; font-weight: 700; color: #fff;">{{ $totalPersen }}%</div>
+                                <div style="font-size: 1.5rem; font-weight: 700; color: #fff;">{{ $totalPersen }}%</div>
                                 <div style="color: rgba(255,255,255,0.8); font-size: 0.9rem;">% Realisasi</div>
                             </div>
                         </div>

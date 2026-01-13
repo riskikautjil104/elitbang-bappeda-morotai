@@ -26,12 +26,9 @@ class FrontendController extends Controller
             ->take(3)
             ->get();
 
-        // OPD Terbaru - 3 items (ambil OPD dengan laporan diterima terbanyak)
+        // OPD Terbaru - 3 items (ambil OPD berdasarkan tanggal terbaru)
         $opdTerbaru = User::whereNotNull('nama_opd')
-            ->withCount(['laporans as laporan_diterima_count' => function($query) {
-                $query->where('status', 'diterima');
-            }])
-            ->orderByDesc('laporan_diterima_count')
+            ->latest()
             ->take(3)
             ->get();
 

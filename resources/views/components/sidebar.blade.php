@@ -74,6 +74,32 @@
                         <span class="pc-mtext">Dashboard</span>
                     </a>
                 </li>
+                @role('superadmin')
+                <li class="pc-item">
+                    <a href="{{route('admin.panduan')}}" class="pc-link" target="_blank">
+                        <span class="pc-micon">
+                            <svg class="pc-icon">
+                                <use xlink:href="#custom-status-up"></use>
+                            </svg>
+                        </span>
+                        <span class="pc-mtext">Panduan</span>
+                    </a>
+                </li>
+                @endrole
+                 @role('opd')
+                <li class="pc-item">
+                    <a href="{{route('panduan')}}" class="pc-link" target="_blank">
+                        <span class="pc-micon">
+                            <svg class="pc-icon">
+                                <use xlink:href="#custom-status-up"></use>
+                            </svg>
+                        </span>
+                        <span class="pc-mtext">Panduan</span>
+                    </a>
+                </li>
+                @endrole
+
+
 
              
                 @role('superadmin')

@@ -80,7 +80,7 @@
                         </form>
 
                         <!-- Divider -->
-                        {{-- <div class="relative my-8">
+                        <div class="relative my-8">
                             <div class="absolute inset-0 flex items-center">
                                 <div class="w-full border-t border-gray-200 dark:border-gray-700"></div>
                             </div>
@@ -89,18 +89,18 @@
                                     atau
                                 </span>
                             </div>
-                        </div> --}}
+                        </div>
 
                         <!-- Register Link -->
-                        {{-- <div class="text-center">
+                        <div class="text-center">
                             <p class="text-sm text-gray-600 dark:text-gray-400">
-                                Belum punya akun?
-                                <a href={{ route('register') }}
+                                Beralih Ke
+                                <a href={{ route('frontend.home') }}
                                     class="font-semibold text-primary-500 hover:text-primary-600 transition-colors ml-1">
-                                    Daftar Sekarang
+                                    Halaman Utama
                                 </a>
                             </p>
-                        </div> --}}
+                        </div>
                     </div>
                 </div>
             </div>

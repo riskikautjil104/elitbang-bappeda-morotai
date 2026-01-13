@@ -28,6 +28,20 @@ Route::middleware(['auth', 'role:opd'])->prefix('dashboard-opd')->group(function
     Route::get('/dokumen-perencanaan/{dokumenPerencanaan}/download', [\App\Http\Controllers\Opd\DokumenPerencanaanController::class, 'download'])
         ->name('opd.dokumen.download');
 });
+
+// Untuk OPD
+Route::middleware(['auth', 'role:opd'])->group(function() {
+    Route::get('/panduan', function() {
+        return view('panduan.index');
+    })->name('panduan');
+});
+
+// Untuk Superadmin
+Route::middleware(['auth', 'role:superadmin'])->group(function() {
+    Route::get('/panduan', function() {
+        return view('panduan.index');
+    })->name('admin.panduan');
+});
 Route::get('/', [FrontendController::class, 'home'])->name('frontend.home');
 Route::get('/data', [FrontendController::class, 'data'])->name('frontend.data');
 Route::get('/data/{id}', [FrontendController::class, 'dataDetail'])->name('frontend.data-detail');

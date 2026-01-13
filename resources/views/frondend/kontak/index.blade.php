@@ -102,10 +102,7 @@
         <div style="position: relative; overflow: hidden; border-radius: 0;">
             <!-- Ganti dengan embed Google Maps atau peta lainnya -->
             <div style="width: 100%; height: 450px; background: linear-gradient(135deg, rgba(26,95,122,0.1), rgba(21,152,149,0.1)); display: flex; align-items: center; justify-content: center;">
-                <div class="text-center">
-                    <i class="lni-map" style="font-size: 4rem; color: #1A5F7A; opacity: 0.3;"></i>
-                    <p style="color: #777; margin-top: 15px; font-size: 1.1rem;">Peta Lokasi</p>
-                </div>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3987.2426604632133!2d128.31560317599735!3d2.0588688979226624!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3290bd0042309aef%3A0x3515404f70405c66!2sBAPPEDA%20PULAU%20MOROTAI!5e0!3m2!1sid!2sid!4v1768249416205!5m2!1sid!2sid" width="80%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="border-radius: 20%;"></iframe>
             </div>
         </div>
     </div>
